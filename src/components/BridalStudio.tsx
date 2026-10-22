@@ -121,7 +121,7 @@ export const BridalStudio: React.FC<BridalStudioProps> = ({ onOpenBooking }) => 
                 <div className="mt-5 pt-4 border-t border-[#4A1A30] flex items-center justify-between">
                   <span className="text-[#E6C280] text-xs font-semibold uppercase tracking-wider">✦ Signature Muhurtham</span>
                   <button
-                    onClick={() => onOpenBooking('bridal-muhurtham-hd')}
+                    onClick={() => onOpenBooking('bridal-basic-hair-styling')}
                     className="text-xs uppercase tracking-wider font-bold text-[#240E1B] bg-[#E6C280] hover:bg-white px-4 py-2 rounded-full transition-colors cursor-pointer"
                   >
                     Select
@@ -143,7 +143,7 @@ export const BridalStudio: React.FC<BridalStudioProps> = ({ onOpenBooking }) => 
                 <div className="mt-5 pt-4 border-t border-[#4A1A30] flex items-center justify-between">
                   <span className="text-[#E6C280] text-xs font-semibold uppercase tracking-wider">✦ Celebrity HD Glam</span>
                   <button
-                    onClick={() => onOpenBooking('bridal-reception-glam')}
+                    onClick={() => onOpenBooking('bridal-basic-hair-styling')}
                     className="text-xs uppercase tracking-wider font-bold text-[#240E1B] bg-[#E6C280] hover:bg-white px-4 py-2 rounded-full transition-colors cursor-pointer"
                   >
                     Select
@@ -174,7 +174,7 @@ export const BridalStudio: React.FC<BridalStudioProps> = ({ onOpenBooking }) => 
                 </a>
 
                 <button
-                  onClick={() => onOpenBooking('bridal-muhurtham-hd')}
+                  onClick={() => onOpenBooking('bridal-basic-hair-styling')}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs uppercase tracking-wider font-bold text-[#E6C280] bg-[#321422] hover:bg-[#3D192B] border border-[#5A243D] transition-all cursor-pointer"
                 >
                   <CalendarIcon className="w-4 h-4 text-[#E6C280]" />

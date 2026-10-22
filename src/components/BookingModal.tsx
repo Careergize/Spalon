@@ -142,7 +142,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               {/* Service Selection */}
               <div>
                 <label className="block text-xs font-semibold text-[#E6C280] uppercase tracking-wider mb-2">
-                  Select Treatment / Ritual
+                  Select Treatment
                 </label>
                 <select
                   value={selectedServiceId}

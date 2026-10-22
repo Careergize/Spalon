@@ -1,7 +1,7 @@
 export interface ServiceItem {
   id: string;
   name: string;
-  category: 'hair' | 'skin' | 'bridal' | 'kids' | 'spa';
+  category: 'hair' | 'skin' | 'bridal' | 'kids' | 'spa' | 'massage' | 'piercing';
   duration: string;
   price?: string;
   description: string;
@@ -42,168 +42,132 @@ export const SALON_INFO = {
 };
 
 export const SERVICES: ServiceItem[] = [
-  // Hair
-  {
-    id: "hair-keratin",
-    name: "Nano-Keratin Protein Treatment",
-    category: "hair",
-    duration: "120-180 mins",
-    popular: true,
-    tag: "Best Seller",
-    description: "Deep nourishing protein infusion that eliminates frizz, restores silkiness, and provides lasting mirror-like shine for up to 6 months.",
-    highlights: ["Formaldehyde-free formula", "Intense humidity protection", "Silky soft finish"]
-  },
+  // Hair Care (6)
   {
     id: "hair-smoothening",
-    name: "Permanent Hair Smoothening / Straightening",
+    name: "Hair Smoothening",
     category: "hair",
     duration: "180-240 mins",
-    description: "L'Oréal Professionnel precision straightening customized to your hair texture for poker-straight elegance with natural bounce.",
-    highlights: ["L'Oréal X-Tenso certified", "Includes post-care mask", "Zero hair breakage"]
+    popular: true,
+    tag: "Best Seller",
+    description: "L'Oréal Professionnel silk-infusion smoothening customized to your hair texture for frizz-free, sleek, and natural bounce.",
+    highlights: ["Formaldehyde-free formula", "Deep hydration & softness", "Long-lasting mirror shine"]
   },
   {
-    id: "hair-cut-style",
-    name: "Precision Layered Haircut & Blow-dry",
+    id: "hair-styling",
+    name: "Hair Styling",
     category: "hair",
-    duration: "45 mins",
+    duration: "45-60 mins",
     popular: true,
-    description: "Face-framing layers, butterfly cut, or curtain bangs sculpted by senior stylists, finished with an anti-humidity blow dry.",
-    highlights: ["Face-shape consultation", "Relaxing scalp wash", "Heat styling included"]
+    description: "Expert blow-dry, curling, crimping, sleek press, or festive styling crafted by certified senior hairstylists.",
+    highlights: ["Heat protectant prep", "Custom styling to suit face shape", "Long-lasting hold"]
   },
   {
-    id: "hair-spa-botox",
-    name: "Hair Botox & Moroccan Argan Spa",
+    id: "hair-rebonding",
+    name: "Hair Rebonding",
     category: "hair",
-    duration: "75 mins",
-    description: "Rejuvenates chemically treated or heat-damaged hair with essential fatty acids, keratin peptides, and therapeutic scalp massage.",
-    highlights: ["Intense split-end repair", "Stimulating massage", "Gloss boost"]
+    duration: "210-270 mins",
+    description: "Permanent thermal reconditioning for poker-straight, ultra-sleek, and impeccably smooth hair.",
+    highlights: ["Advanced bond-rebuilding technology", "Intense gloss treatment", "Silky pin-straight finish"]
   },
   {
-    id: "hair-color-balayage",
-    name: "Balayage Highlights & Global Hair Color",
+    id: "bridal-basic-hair-styling",
+    name: "Bridal Basic Hair Styling",
+    category: "bridal",
+    duration: "90-120 mins",
+    popular: true,
+    tag: "Bridal Special",
+    description: "Traditional South Indian bridal braids, elegant jasmine floral settings, romantic textured buns, and tiara/accessory placement.",
+    highlights: ["Secure all-day floral attachment", "Muhurtham & reception updos", "Jewellery & accessory setting"]
+  },
+  {
+    id: "advance-hair-cut",
+    name: "Advance Hair Cut",
     category: "hair",
-    duration: "120 mins",
-    description: "Seamless hand-painted highlights, rich mocha, caramel, or burgundy tones using ammonia-free salon formulations.",
-    highlights: ["Ammonia-free gentle color", "Zero brassiness finish", "Includes color-lock treatment"]
-  },
-
-  // Skin & Facials
-  {
-    id: "skin-hydra-facial",
-    name: "Medical-Grade Hydra Dermabrasion Facial",
-    category: "skin",
-    duration: "75 mins",
+    duration: "45-60 mins",
     popular: true,
-    tag: "Celebrity Glow",
-    description: "Multi-step vortex suction deep pore extraction, hyaluronic acid peptide infusion, and cold hammer oxygen therapy for an instant glass-skin finish.",
-    highlights: ["Zero downtime", "Deep blackhead removal", "Instant bridal radiance"]
+    description: "Precision face-framing layers, butterfly cut, feather cut, graduated bob, or curtain bangs with relaxing wash and styling.",
+    highlights: ["In-depth consultation", "Includes wash & blow-dry", "Texturizing for natural volume"]
   },
   {
-    id: "skin-o3-whitening",
-    name: "O3+ Radiant Glow & De-Pigmentation",
-    category: "skin",
-    duration: "60 mins",
-    description: "Formulated for sun-exposed Kerala climate: removes stubborn tan, lightens blemishes, and restores an even, radiant complexion.",
-    highlights: ["Melanin suppression", "Pure oxygen booster", "Soothing algae mask"]
-  },
-  {
-    id: "skin-gold-facial",
-    name: "24K Gold Luxury Illuminating Facial",
-    category: "skin",
-    duration: "75 mins",
-    description: "Enriched with 24K gold dust and botanical collagen to enhance cellular renewal and give a warm festive luminescence.",
-    highlights: ["Fine line smoothing", "Collagen renewal", "Luminous festive glow"]
-  },
-  {
-    id: "skin-detan-cleanup",
-    name: "Herbal Fruit De-Tan Clean Up",
-    category: "skin",
-    duration: "45 mins",
-    description: "Quick refreshing cleanse with steam, blackhead extractions, mild exfoliation, and a cooling aloe pack.",
-    highlights: ["Tired skin reviver", "Non-comedogenic", "Fresh herbal botanicals"]
+    id: "hair-straightening",
+    name: "Hair Straightening",
+    category: "hair",
+    duration: "180-240 mins",
+    description: "Salon-grade chemical straightening treatment tailored to tame stubborn curls, excessive wave, and unwanted volume.",
+    highlights: ["Nourishing neutralizer included", "Smooth & manageable hair", "Anti-frizz humidity shield"]
   },
 
-  // Bridal
+  // Hair Removal (2)
   {
-    id: "bridal-muhurtham-hd",
-    name: "Royal Kerala Muhurtham HD Bridal Package",
-    category: "bridal",
-    duration: "180 mins",
-    popular: true,
-    tag: "Signature Look",
-    description: "Complete signature bridal look for traditional Kasavu/Kanchipuram sarees: high-definition waterproof sweat-proof makeup, jasmine floral hair setting, and perfect jewellery placement.",
-    highlights: ["16-hour sweat-proof HD makeup", "Traditional & modern hair updos", "Precision pleat saree draping", "Lashes & lenses assistance"]
-  },
-  {
-    id: "bridal-reception-glam",
-    name: "Cocktail & Reception Airbrush Glam",
-    category: "bridal",
-    duration: "150 mins",
-    description: "Featherlight airbrush makeup delivering a seamless celebrity finish under flash photography and stage lights with glamorous waves or chic updo.",
-    highlights: ["Airbrush silicon technology", "Custom smokey/shimmer eyes", "Gown & veil styling"]
-  },
-  {
-    id: "bridal-pre-radiance",
-    name: "3-Week Pre-Bridal Glow Transformation",
-    category: "bridal",
-    duration: "3 Sessions",
-    description: "Full body polishing, gold facial, hair restoration spa, deluxe manicure-pedicure, threading, waxing, and herbal back treatment.",
-    highlights: ["Head-to-toe pampering", "Custom bridal consultation", "Detox body scrub"]
-  },
-
-  // Kids
-  {
-    id: "kids-haircut-boy",
-    name: "Gentle & Fun Kids Haircut (Boys)",
-    category: "kids",
-    duration: "25 mins",
-    popular: true,
-    tag: "Tear-Free",
-    description: "Patient, friendly stylists trained to keep toddlers and young boys happy and calm with fun animated capes and gentle scissors.",
-    highlights: ["Super patient stylists", "Kid-safe sanitized tools", "Lollipop & sticker treat"]
-  },
-  {
-    id: "kids-haircut-girl",
-    name: "Pretty Princess Bob / Layer Cut (Girls)",
-    category: "kids",
-    duration: "30 mins",
-    description: "Cute bobs, bangs, or trim tailored for kids with soft detangling spray and complimentary cute hair clips.",
-    highlights: ["Tangle-free combing", "Soft baby-friendly scissors", "Complimentary hair clips"]
-  },
-  {
-    id: "kids-ear-piercing",
-    name: "Painless Gun Ear Piercing",
-    category: "kids",
-    duration: "20 mins",
-    description: "100% sterile, hypoallergenic medical-grade studs with quick and virtually painless touch for toddlers and girls.",
-    highlights: ["Hypoallergenic studs", "Antiseptic aftercare gel", "Zero infection guarantee"]
-  },
-
-  // Hands, Feet & Spa
-  {
-    id: "spa-icecream-pedicure",
-    name: "Aroma Luxury Crystal Pedicure & Foot Spa",
+    id: "threading-eyebrows",
+    name: "Threading - Eyebrows",
     category: "spa",
-    duration: "60 mins",
+    duration: "15 mins",
     popular: true,
-    description: "Soothing foot bath with Epsom bath salts, deep callus buffing, organic sugar scrub, relaxing reflexology foot massage, and nail shaping.",
-    highlights: ["Relieves heel cracks & fatigue", "Deep calf massage", "Gel polish finish option"]
+    description: "Clean, hygienic, and precise brow contouring, forehead, and upper lip threading using sanitized antibacterial thread.",
+    highlights: ["Gentle precision shaping", "Calming aloe vera finish", "100% hygienic sanitized thread"]
   },
   {
-    id: "spa-french-manicure",
-    name: "Classic Spa Manicure with Cuticle Care",
-    category: "spa",
-    duration: "45 mins",
-    description: "Hydrating soak, almond oil cuticle nourishing, gentle arm massage, and streak-free buffing or polish.",
-    highlights: ["Dead skin exfoliation", "Nail strengthening treatment", "High-gloss top coat"]
-  },
-  {
-    id: "spa-body-waxing",
-    name: "Rica Liposoluble Painless Waxing",
+    id: "waxing",
+    name: "Waxing",
     category: "spa",
     duration: "30-60 mins",
-    description: "Italian Rica wax that adheres to hair rather than skin, minimizing redness and preventing ingrown hair on sensitive skin.",
-    highlights: ["Colophony-free & gentle", "No redness or rashes", "Long-lasting smoothness"]
+    description: "Gentle full-body, arms, and legs waxing using soothing liposoluble wax formulated to minimize irritation and redness.",
+    highlights: ["Minimal pain formula", "Removes fine & coarse hair", "Leaves skin soft & silky"]
+  },
+
+  // Skin Care (2)
+  {
+    id: "skin-treatment",
+    name: "Skin Treatment",
+    category: "skin",
+    duration: "60-75 mins",
+    popular: true,
+    tag: "Radiance",
+    description: "Targeted dermatological skin ritual: deep pore cleansing, exfoliation, intensive serum infusion, and therapeutic recovery mask.",
+    highlights: ["Custom skin analysis", "Hydration replenishment", "Visible natural glow"]
+  },
+  {
+    id: "anti-acne-facial",
+    name: "Anti Acne Facial",
+    category: "skin",
+    duration: "60 mins",
+    description: "Clarifying facial targeting active breakouts, excess sebum, and clogged pores with antibacterial steam, extractions, and soothing mask.",
+    highlights: ["Pore decongestion & extractions", "Soothes inflammation & redness", "Sebum-balancing botanical mask"]
+  },
+
+  // Massage (1)
+  {
+    id: "foot-massage",
+    name: "Foot Massage",
+    category: "massage",
+    duration: "30-45 mins",
+    popular: true,
+    tag: "Relaxation",
+    description: "Relaxing reflexology foot and calf massage with aromatic essential oils to ease fatigue, improve circulation, and melt stress.",
+    highlights: ["Pressure point stimulation", "Warm herbal oil therapy", "Relieves foot ache & heaviness"]
+  },
+
+  // Nails (1)
+  {
+    id: "premium-manicure",
+    name: "Premium Manicure",
+    category: "spa",
+    duration: "45 mins",
+    description: "Luxurious nail grooming including warm hand soak, gentle cuticle care, scrub exfoliation, relaxing hand massage, and high-gloss polish.",
+    highlights: ["Nail shaping & buffing", "Nourishing cuticle oil massage", "Long-lasting gel or shine polish"]
+  },
+
+  // Piercing (1)
+  {
+    id: "ear-piercing",
+    name: "Ear Piercing",
+    category: "piercing",
+    duration: "20 mins",
+    popular: true,
+    description: "Quick, hygienic, and virtually painless ear piercing using sterilized medical-grade hypoallergenic studs for women and children.",
+    highlights: ["100% sterile & hypoallergenic", "Quick & gentle technique", "Antiseptic aftercare guidance"]
   }
 ];
 
@@ -214,8 +178,8 @@ export const REVIEWS: ReviewItem[] = [
     location: "Ulloor, Trivandrum",
     rating: 5,
     date: "1 month ago",
-    comment: "Got the vibrant hair color and keratin treatment done at Spalon. The result is pure magic—look at the before and after! Soft, shiny, and the highlights are so beautifully blended. Absolutely the best hair salon in Kumarapuram.",
-    service: "Vibrant Color & Highlights",
+    comment: "Got the vibrant hair color and smoothening treatment done at Spalon. The result is pure magic—look at the before and after! Soft, shiny, and the highlights are so beautifully blended. Absolutely the best hair salon in Kumarapuram.",
+    service: "Hair Smoothening & Styling",
     image: "/images/spalon_transformation_review.jpg",
     imageCaption: "Verified Google Maps Review: Before & After Hair Transformation",
     isGoogleReviewPhoto: true
@@ -226,8 +190,8 @@ export const REVIEWS: ReviewItem[] = [
     location: "Kumarapuram, Trivandrum",
     rating: 5,
     date: "2 weeks ago",
-    comment: "Spalon is my absolute go-to beauty parlour in Kumarapuram. The staff is so gentle, professional, and courteous. Got my Hydra Facial done here and the glow lasted through an entire wedding week! Their hygiene standards are top-notch.",
-    service: "Hydra Dermabrasion Facial",
+    comment: "Spalon is my absolute go-to beauty parlour in Kumarapuram. The staff is so gentle, professional, and courteous. Got my Skin Treatment done here and the glow lasted through an entire wedding week! Their hygiene standards are top-notch.",
+    service: "Skin Treatment & Anti Acne Facial",
     image: "/images/facial_spa.jpg",
     imageCaption: "Client Post-Facial Radiant Glow"
   },
@@ -237,8 +201,8 @@ export const REVIEWS: ReviewItem[] = [
     location: "Medical College area, Trivandrum",
     rating: 5,
     date: "1 month ago",
-    comment: "Took my 4-year-old daughter here for her first haircut and was so worried she'd cry. The stylist handled her with so much warmth and patience! She walked out smiling with her cute hair clips. Truly the best salon for ladies & kids in the city.",
-    service: "Tear-Free Kids Haircut",
+    comment: "Took my 4-year-old daughter here for her ear piercing and haircut. The stylist handled her with so much warmth and patience! She walked out smiling with her cute hair clips. Truly the best salon for ladies & kids in the city.",
+    service: "Ear Piercing & Hair Cut",
     image: "/images/kids_cut.jpg",
     imageCaption: "Gentle Kids Haircut Experience"
   },
@@ -248,8 +212,8 @@ export const REVIEWS: ReviewItem[] = [
     location: "Pattom, Trivandrum",
     rating: 5,
     date: "3 weeks ago",
-    comment: "Booked Spalon for my wedding muhurtham and reception. The makeup was so natural yet radiant, and the saree pleating stayed intact for 8+ hours under heavy lights without a single pin shifting. Highly recommended!",
-    service: "Kerala Muhurtham Bridal",
+    comment: "Booked Spalon for my wedding muhurtham and reception. The bridal hair styling and saree pleating stayed intact for 8+ hours under heavy lights without a single pin shifting. Highly recommended!",
+    service: "Bridal Basic Hair Styling",
     image: "/images/bridal_glow.jpg",
     imageCaption: "Muhurtham Bridal Saree Draping & Makeover"
   }

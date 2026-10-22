@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    service: 'hair-keratin',
+    service: SERVICES[0]?.id || 'hair-smoothening',
     comment: ''
   });
   const [subscribed, setSubscribed] = useState(false);
@@ -309,15 +309,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="w-full bg-[#270D1B] border border-[#5E2242] focus:border-[#E6C280] rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none transition-colors cursor-pointer"
                   >
-                    <option value="hair-keratin">Nano-Keratin Protein Treatment</option>
-                    <option value="hair-color-balayage">Balayage Highlights &amp; Global Hair Color</option>
-                    <option value="hair-smoothening">Permanent Hair Smoothening</option>
-                    <option value="hair-cut-style">Precision Haircut &amp; Blow-Dry</option>
-                    <option value="skin-hydra-facial">Hydra Dermabrasion Glass Skin Facial</option>
-                    <option value="skin-detan-cleanup">Herbal Fruit De-Tan Clean Up</option>
-                    <option value="bridal-muhurtham-hd">Kerala Muhurtham HD Bridal Makeover</option>
-                    <option value="kids-haircut-boy">Gentle Kids Haircut</option>
-                    <option value="spa-icecream-pedicure">Luxury Crystal Pedicure &amp; Spa</option>
+                    {SERVICES.map((s) => (
+                      <option key={s.id} value={s.id} className="bg-[#240E1B] text-white">
+                        {s.name}
+                      </option>
+                    ))}
                   </select>
                 </div>
 

@@ -18,49 +18,77 @@ export const ServiceCatalog: React.FC<ServiceCatalogProps> = ({
 }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  // Exact services matching the La Diva template style
+  // Services matching official salon service categories
   const services: LaDivaServiceItem[] = [
+    {
+      id: 'hair-smoothening',
+      title: 'Hair Smoothening',
+      tag: 'HAIR CARE',
+      description: 'L\'Oréal Professionnel silk-infusion smoothening and rebonding for sleek, frizz-free hair.',
+      image: '/images/service_hair_smoothening.jpg',
+    },
     {
       id: 'hair-styling',
       title: 'Hair Styling',
       tag: 'HAIR STUDIO',
-      description: 'Get a fresh look for your hair with our talented hairstylists.',
+      description: 'Get a fresh look for your hair with our talented hairstylists and advance cuts.',
       image: '/images/service_hair_styling.jpg',
     },
     {
-      id: 'brows-lashes',
-      title: 'Brows & Lashes',
+      id: 'threading-eyebrows',
+      title: 'Brows & Threading',
       tag: 'GROOMING',
-      description: 'Highlight your eyes and shape your brows with our brow and lash experts.',
+      description: 'Highlight your eyes and shape your brows with gentle, hygienic precision threading.',
       image: '/images/service_brows_lashes.jpg',
     },
     {
-      id: 'manicure-pedicure',
-      title: 'Manicure',
-      tag: 'NAIL SPA',
-      description: 'Let your nails be a reflection of your unique style and personality.',
-      image: '/images/service_manicure.jpg',
-    },
-    {
-      id: 'bridal-makeover',
-      title: 'Bridal Makeover',
-      tag: 'SIGNATURE',
-      description: 'Timeless Kerala Muhurtham HD makeover, jasmine hair styling, and authentic pleating.',
-      image: '/images/bridal_glow.jpg',
-    },
-    {
-      id: 'hydra-facial',
-      title: 'Hydra Facial',
-      tag: 'SKINCARE',
-      description: 'Multi-step vortex suction deep pore extraction, peptide infusion, and instant glass skin glow.',
+      id: 'skin-treatment',
+      title: 'Skin Care & Facial',
+      tag: 'SKIN CARE',
+      description: 'Targeted skin treatments and anti-acne facials for healthy, luminous, blemish-free skin.',
       image: '/images/facial_spa.jpg',
     },
     {
-      id: 'kids-haircut',
-      title: 'Kids Styling',
-      tag: 'KIDS ZONE',
-      description: 'Gentle, tear-free haircut experience for little ones with patient senior stylists.',
-      image: '/images/kids_cut.jpg',
+      id: 'foot-massage',
+      title: 'Foot Massage',
+      tag: 'MASSAGE',
+      description: 'Relaxing reflexology foot and calf massage with aromatic oils to melt away daily fatigue.',
+      image: '/images/service_foot_massage.jpg',
+    },
+    {
+      id: 'premium-manicure',
+      title: 'Premium Manicure',
+      tag: 'NAIL SPA',
+      description: 'Luxurious nail shaping, warm soak, gentle cuticle care, and high-gloss polish finish.',
+      image: '/images/service_manicure.jpg',
+    },
+    {
+      id: 'bridal-basic-hair-styling',
+      title: 'Bridal Hair Styling',
+      tag: 'BRIDAL STUDIO',
+      description: 'Exquisite traditional South Indian braids, jasmine floral setting, and festive updos.',
+      image: '/images/bridal_glow.jpg',
+    },
+    {
+      id: 'ear-piercing',
+      title: 'Ear Piercing',
+      tag: 'PIERCING',
+      description: 'Sterile, quick, and painless medical-grade ear piercing for ladies and children.',
+      image: '/images/service_ear_piercing.jpg',
+    },
+    {
+      id: 'advance-hair-cut',
+      title: 'Advance Hair Cut',
+      tag: 'HAIR CARE',
+      description: 'Face-framing layers, feather cuts, and curtain bangs sculpted by certified senior stylists.',
+      image: '/images/spalon_hair_layers.jpg',
+    },
+    {
+      id: 'waxing',
+      title: 'Waxing Services',
+      tag: 'GROOMING',
+      description: 'Gentle full-body, arms, and legs waxing leaving skin flawlessly soft and smooth.',
+      image: '/images/service_waxing.jpg',
     },
   ];
 

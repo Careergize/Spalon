@@ -75,7 +75,7 @@ export const KidsZone: React.FC<KidsZoneProps> = ({ onOpenBooking }) => {
             {/* CTAs */}
             <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-3.5 w-full sm:w-auto">
               <button
-                onClick={() => onOpenBooking('kids-haircut-boy')}
+                onClick={() => onOpenBooking('advance-hair-cut')}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs uppercase tracking-wider font-bold text-white bg-gradient-to-r from-[#881337] to-[#BE185D] hover:from-[#9F1239] hover:to-[#E11D48] shadow-md transition-all cursor-pointer"
               >
                 <CalendarIcon className="w-4 h-4 text-[#F3E5AB]" />
@@ -83,7 +83,7 @@ export const KidsZone: React.FC<KidsZoneProps> = ({ onOpenBooking }) => {
               </button>
 
               <button
-                onClick={() => onOpenBooking('kids-ear-piercing')}
+                onClick={() => onOpenBooking('ear-piercing')}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold text-[#E6C280] bg-[#321422] hover:bg-[#3D192B] border border-[#5A243D] transition-all cursor-pointer"
               >
                 <span>Medical Ear Piercing</span>
