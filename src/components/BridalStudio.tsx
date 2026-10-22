@@ -49,7 +49,7 @@ export const BridalStudio: React.FC<BridalStudioProps> = ({ onOpenBooking }) => 
           
           {/* Left Column: Arched Bridal Image */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-t-full rounded-b-[40px] overflow-hidden border-2 border-[#E6C280]/40 shadow-2xl shadow-black/80 aspect-[3/4] bg-[#321422] group">
+            <div className="relative rounded-t-full rounded-b-[40px] overflow-hidden border-2 border-[#E6C280]/40 shadow-2xl shadow-black/80 aspect-[4/5] sm:aspect-[3/4] max-w-xs sm:max-w-md mx-auto bg-[#321422] group">
               <img
                 src="/images/bridal_glow.jpg"
                 alt="Kerala Bridal Makeover at Spalon Trivandrum"
@@ -58,29 +58,29 @@ export const BridalStudio: React.FC<BridalStudioProps> = ({ onOpenBooking }) => 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#240E1B]/90 via-transparent to-transparent" />
               
-              <div className="absolute bottom-6 left-6 right-6 text-center">
+              <div className="absolute bottom-5 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 text-center">
                 <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#240E1B] bg-[#E6C280] px-3 py-1 rounded-full shadow-sm">
                   Kerala Muhurtham
                 </span>
-                <p className="font-serif text-xl font-normal text-white mt-2">
+                <p className="font-serif text-lg sm:text-xl font-normal text-white mt-1.5 sm:mt-2">
                   Traditional Elegance &amp; HD Artistry
                 </p>
-                <div className="flex items-center justify-center gap-1 text-[#E6C280] mt-2">
+                <div className="flex items-center justify-center gap-1 text-[#E6C280] mt-1.5 sm:mt-2">
                   {[...Array(5)].map((_, i) => (
-                    <StarIcon key={i} className="w-3.5 h-3.5 fill-[#E6C280] text-[#E6C280]" />
+                    <StarIcon key={i} className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-[#E6C280] text-[#E6C280]" />
                   ))}
-                  <span className="text-xs text-[#D4BCC7] font-light ml-2">150+ Happy Kerala Brides</span>
+                  <span className="text-[11px] sm:text-xs text-[#D4BCC7] font-light ml-1.5">150+ Happy Kerala Brides</span>
                 </div>
               </div>
             </div>
 
-            {/* Floating Humidity Proof Tag */}
-            <div className="absolute -bottom-6 -left-6 bg-[#321422] border border-[#5A243D] p-4 rounded-2xl shadow-2xl max-w-[200px] hidden sm:block">
-              <div className="flex items-center gap-2 text-[#E6C280] mb-1">
-                <HeartIcon className="w-3.5 h-3.5 text-[#E6C280]" />
-                <span className="text-[10px] font-bold uppercase tracking-wider">16-Hour Hold</span>
+            {/* Floating Humidity Proof Tag (Visible on Mobile & Desktop) */}
+            <div className="absolute -bottom-3 left-2 sm:-bottom-6 sm:-left-6 bg-[#321422]/95 backdrop-blur-md border border-[#5A243D] p-3 sm:p-4 rounded-2xl shadow-2xl max-w-[160px] sm:max-w-[200px] block z-10">
+              <div className="flex items-center gap-1.5 sm:gap-2 text-[#E6C280] mb-0.5 sm:mb-1">
+                <HeartIcon className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#E6C280]" />
+                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">16-Hour Hold</span>
               </div>
-              <p className="text-[11px] text-[#D4BCC7] leading-snug font-light">
+              <p className="text-[10px] sm:text-[11px] text-[#D4BCC7] leading-snug font-light">
                 Proof against coastal humidity and heavy stage lights.
               </p>
             </div>

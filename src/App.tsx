@@ -31,7 +31,7 @@ function App() {
   const isContactPage = window.location.pathname.replace(/\/$/, '') === '/contact';
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#240E1B] text-[#FDF4F7] selection:bg-[#881337] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#240E1B] text-[#FDF4F7] selection:bg-[#881337] selection:text-white pb-20 md:pb-0">
       {/* Editorial Navigation */}
       <Navbar onOpenBooking={handleOpenBooking} />
 

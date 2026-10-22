@@ -80,7 +80,7 @@ export const LocationMap: React.FC = () => {
             </div>
 
             {/* Direct Navigation Callout */}
-            <div className="p-5 sm:p-7 rounded-[28px] sm:rounded-[32px] bg-[#1B0A13] text-[#FDF4F7] shadow-xl border border-[#5A243D]">
+            <div className="p-5 sm:p-7 rounded-[24px] sm:rounded-[32px] bg-[#1B0A13] text-[#FDF4F7] shadow-xl border border-[#5A243D]">
               <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#E6C280] block mb-1">
                 ✦ Appointments &amp; Directions
               </span>
@@ -91,12 +91,12 @@ export const LocationMap: React.FC = () => {
                 Connect with our Kumarapuram desk or launch instant GPS navigation.
               </p>
 
-              <div className="mt-5 sm:mt-6 flex flex-wrap gap-3">
+              <div className="mt-5 sm:mt-6 flex flex-col xs:flex-row gap-3">
                 <a
                   href={SALON_INFO.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 min-w-[130px] inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full text-xs uppercase tracking-wider font-bold text-[#240E1B] bg-[#E6C280] hover:bg-white transition-all cursor-pointer shadow"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full text-xs uppercase tracking-wider font-bold text-[#240E1B] bg-[#E6C280] hover:bg-white transition-all cursor-pointer shadow"
                 >
                   <CompassIcon className="w-4 h-4 text-[#240E1B]" />
                   <span>Open in Maps</span>
@@ -104,7 +104,7 @@ export const LocationMap: React.FC = () => {
 
                 <a
                   href={`tel:${SALON_INFO.phoneClean}`}
-                  className="flex-1 min-w-[130px] inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full text-xs uppercase tracking-wider font-bold text-white bg-[#321422] hover:bg-[#3D192B] border border-[#5A243D] transition-all"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full text-xs uppercase tracking-wider font-bold text-white bg-[#321422] hover:bg-[#3D192B] border border-[#5A243D] transition-all"
                 >
                   <PhoneIcon className="w-4 h-4 text-[#E6C280]" />
                   <span>{SALON_INFO.phone}</span>
@@ -115,13 +115,13 @@ export const LocationMap: React.FC = () => {
           </div>
 
           {/* Right Column: Google Maps */}
-          <div className="lg:col-span-7 rounded-[28px] sm:rounded-[36px] overflow-hidden border border-[#5A243D] shadow-2xl flex flex-col bg-[#321422] min-h-[320px] sm:min-h-[440px]">
+          <div className="lg:col-span-7 rounded-[24px] sm:rounded-[36px] overflow-hidden border border-[#5A243D] shadow-2xl flex flex-col bg-[#321422] min-h-[280px] sm:min-h-[440px]">
             <iframe
               title="Spalon Location Map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.8679462438895!2d76.9279608!3d8.5110622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bbf0bfffffff%3A0xf7e900fcdb0ce72c!2sSpalon%20-%20Professional%20Beauty%20Parlour%20(ladies%20%26%20Kids%20)!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
-              style={{ border: 0, minHeight: '320px' }}
+              style={{ border: 0, minHeight: '280px' }}
               allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
