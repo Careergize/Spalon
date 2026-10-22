@@ -45,11 +45,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     : SERVICES.slice(0, 6);
 
   const navItems = [
-    { label: 'Services', href: '#services' },
-    { label: 'Bridal', href: '#portfolio' },
-    { label: 'Kids Zone', href: '#kids' },
-    { label: 'Reviews', href: '#reviews' },
-    { label: 'Location', href: '#location' },
+    { label: 'About', href: '/#philosophy' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Bridal', href: '/#portfolio' },
+    { label: 'Kids Zone', href: '/#kids' },
+    { label: 'Reviews', href: '/#reviews' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -67,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           {/* Left: Brand Logo (Spalon official logo) */}
           <div className="flex items-center gap-8">
             <a 
-              href="#" 
+              href="/" 
               className="flex items-center select-none group" 
               aria-label="Spalon"
             >
@@ -305,3 +306,5 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     </>
   );
 };
+
+

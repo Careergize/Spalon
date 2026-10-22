@@ -124,3 +124,59 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Reference-inspired editorial layout in Spalon's established palette. */
+:root { scroll-padding-top: 90px; }
+.beauty-script { display: block; font-family: var(--font-script); font-size: clamp(32px, 3.3vw, 48px); font-weight: 400; color: var(--color-gold); line-height: 1.2; }
+.beauty-hero { position: relative; min-height: min(780px, 88svh); display: flex; align-items: center; justify-content: center; background: var(--color-plum-dark); overflow: hidden; }
+.beauty-hero-image, .beauty-hero-shade { position: absolute; inset: 0; }
+.beauty-hero-image { opacity: 0; transition: opacity 1s ease; }
+.beauty-hero-image.is-active { opacity: 1; }
+.beauty-hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 36%; }
+.beauty-hero-shade { background: linear-gradient(90deg, #240e1bbd, #240e1b66, #240e1ba6), linear-gradient(0deg, #240e1be6, transparent 45%); }
+.beauty-hero-content { position: relative; z-index: 1; max-width: 1000px; text-align: center; padding: 90px 58px 125px; }
+.beauty-hero h1 { font-size: clamp(36px, 5.5vw, 78px); font-weight: 400; line-height: 1.08; margin: 23px 0; letter-spacing: -.025em; }
+.beauty-hero-content p { color: #FDF4F7; font-size: 15px; line-height: 1.8; }
+.beauty-hero-actions { display: flex; gap: 30px; justify-content: center; align-items: center; margin-top: 34px; }
+.beauty-button { border: 1px solid var(--color-gold); color: var(--color-gold); padding: 19px 27px; display: inline-flex; gap: 30px; align-items: center; font-size: 11px; letter-spacing: .13em; text-transform: uppercase; font-weight: 600; transition: background .2s, color .2s; }
+.beauty-button:hover { background: var(--color-gold); color: var(--color-plum-dark); }
+.beauty-text-link { color: var(--color-gold); text-transform: uppercase; letter-spacing: .12em; font-size: 11px; font-weight: 600; cursor: pointer; padding: 12px 0; display: inline-flex; align-items: center; gap: 24px; }
+.beauty-text-link:hover { color: #FDF4F7; }
+.hero-arrow { position: absolute; top: 47%; width: 38px; height: 48px; border: 1px solid #e6c28066; color: #E6C280; font-size: 32px; cursor: pointer; z-index: 2; }
+.hero-arrow:hover { background: #321422; }
+.hero-arrow-prev { left: 24px; } .hero-arrow-next { right: 24px; }
+.beauty-hero-footer { position: absolute; bottom: 25px; left: 5%; right: 5%; display: flex; justify-content: space-between; align-items: center; gap: 20px; z-index: 2; }
+.beauty-hero-footer > a { font-size: 9px; text-transform: uppercase; letter-spacing: .13em; } .beauty-hero-footer > a span { color: #E6C280; margin: 0 16px; }
+.hero-pagination { display: flex; gap: 10px; } .hero-pagination button { width: 32px; height: 24px; position: relative; cursor: pointer; } .hero-pagination button::after { content: ''; position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: #D4BCC766; } .hero-pagination button.is-active::after { background: #E6C280; }
+.hero-pause { font-size: 10px; color: #D4BCC7; border: 1px solid #D4BCC755; padding: 7px 10px; cursor: pointer; }
+.beauty-about { max-width: 1280px; margin: auto; padding: 110px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
+.beauty-about-photos { position: relative; padding: 0 25% 22% 0; }
+.about-photo-main { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+.about-photo-detail { position: absolute; width: 58%; height: 62%; object-fit: cover; right: 0; bottom: 0; border: 10px solid var(--color-plum-dark); }
+.about-photo-caption { position: absolute; bottom: 4%; left: 0; width: 40%; font-size: 28px; }
+.beauty-about-copy h2 { font-size: clamp(32px, 3.8vw, 50px); line-height: 1.15; margin: 20px 0; font-weight: 400; }
+.beauty-rule { height: 1px; width: 64px; background: #E6C280; margin: 28px 0; }
+.beauty-about-copy p { font-size: 14px; color: #D4BCC7; line-height: 1.95; margin-bottom: 15px; }
+.beauty-about-facts { display: flex; gap: 30px; margin: 30px 0; padding: 24px 0; border-block: 1px solid #5A243D; }
+.beauty-about-facts strong { display: block; font-family: var(--font-heading); font-size: 25px; color: #E6C280; font-weight: 400; }
+.beauty-about-facts span { display: block; font-size: 10px; color: #D4BCC7; margin-top: 5px; }
+main > section { scroll-margin-top: 85px; }
+#portfolio .rounded-t-full, #kids .rounded-t-full { border-radius: 0; }
+#portfolio .rounded-3xl, #portfolio .rounded-2xl { border-radius: 3px; }
+:focus-visible { outline: 2px solid #E6C280; outline-offset: 5px; }
+@media (max-width: 767px) {
+  .beauty-hero { min-height: 680px; min-height: 85svh; }
+  .beauty-hero-content { padding: 70px 40px 120px; }
+  .beauty-hero-content p { font-size: 13px; }
+  .beauty-hero-actions { flex-direction: column; gap: 8px; margin-top: 26px; }
+  .hero-arrow { width: 26px; height: 40px; } .hero-arrow-prev { left: 8px; } .hero-arrow-next { right: 8px; }
+  .beauty-hero-footer { flex-wrap: wrap; justify-content: center; bottom: 20px; gap: 7px 22px; }
+  .beauty-hero-footer > a { width: 100%; text-align: center; font-size: 8px; }
+  .beauty-about { padding: 65px 24px; grid-template-columns: 1fr; gap: 42px; }
+  .beauty-about-photos { max-width: 480px; width: 100%; margin: auto; }
+  .beauty-about-facts { gap: 22px; } .beauty-about-facts strong { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

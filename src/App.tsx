@@ -1,13 +1,14 @@
+import { ContactPage } from './components/ContactPage';
 import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { MarqueeTicker } from './components/MarqueeTicker';
+
 import { Philosophy } from './components/Philosophy';
 import { ServiceCatalog } from './components/ServiceCatalog';
 import { BridalStudio } from './components/BridalStudio';
 import { KidsZone } from './components/KidsZone';
 import { ReviewsSection } from './components/ReviewsSection';
-import { LocationMap } from './components/LocationMap';
+
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
@@ -27,18 +28,20 @@ function App() {
     setSelectedServiceId(undefined);
   };
 
+  const isContactPage = window.location.pathname.replace(/\/$/, '') === '/contact';
+
   return (
     <div className="min-h-screen flex flex-col bg-[#240E1B] text-[#FDF4F7] selection:bg-[#881337] selection:text-white">
       {/* Editorial Navigation */}
       <Navbar onOpenBooking={handleOpenBooking} />
 
       {/* Main Content Sections */}
-      <main className="flex-1">
+      <main className="flex-1">{isContactPage ? <ContactPage /> : <>
         {/* La Diva Inspired Hero Section */}
         <Hero onOpenBooking={() => handleOpenBooking()} />
 
-        {/* Continuous Editorial Marquee Ribbon */}
-        <MarqueeTicker />
+
+
 
         {/* Philosophy & Craftsmanship Pillars */}
         <Philosophy />
@@ -55,15 +58,15 @@ function App() {
         {/* Verified 4.4★ Google Client Reviews */}
         <ReviewsSection />
 
-        {/* Studio Location & Embedded Google Map */}
-        <LocationMap />
+
+
 
         {/* Questions & Inquiries */}
         <FaqSection />
-      </main>
+      </>}</main>
 
       {/* Editorial Footer */}
-      <Footer onOpenBooking={(serviceId) => handleOpenBooking(serviceId)} />
+      <Footer />
 
       {/* Sticky Mobile Floating Action Bar (Call, WhatsApp, Maps, Book) */}
       <FloatingActionBar onOpenBooking={() => handleOpenBooking()} />
@@ -79,3 +82,6 @@ function App() {
 }
 
 export default App;
+
+
+

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { SALON_INFO } from '../data/salonData';
 
 interface ServiceCatalogProps {
@@ -17,6 +17,22 @@ export const ServiceCatalog: React.FC<ServiceCatalogProps> = ({
   onSelectServiceForBooking 
 }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+
+    const timer = window.setInterval(() => {
+      const track = carouselRef.current;
+      if (!track || document.hidden) return;
+      const bounds = track.getBoundingClientRect();
+      if (bounds.bottom <= 0 || bounds.top >= window.innerHeight) return;
+      const first = track.children[0] as HTMLElement | undefined;
+      const second = track.children[1] as HTMLElement | undefined;
+      if (!first || !second) return;
+      const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+      track.scrollTo({ left: atEnd ? 0 : track.scrollLeft + second.offsetLeft - first.offsetLeft, behavior: 'smooth' });
+    }, 3500);
+    return () => window.clearInterval(timer);
+  }, []);
 
   // Services matching official salon service categories
   const services: LaDivaServiceItem[] = [
@@ -112,7 +128,7 @@ export const ServiceCatalog: React.FC<ServiceCatalogProps> = ({
               OUR SERVICES
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-[56px] text-white font-normal leading-[1.12] tracking-tight">
-              A range of high-<br className="hidden sm:inline" />quality beauty<br className="hidden sm:inline" />services
+              BEAUTY CARE,<br />MADE PERSONAL.
             </h2>
             <p className="mt-4 sm:mt-6 text-sm text-[#D4BCC7] font-light leading-relaxed max-w-sm">
               Discover our bespoke hair, skin, and nail treatments meticulously performed by certified stylists at Capital Tower, Kumarapuram.
@@ -221,7 +237,7 @@ export const ServiceCatalog: React.FC<ServiceCatalogProps> = ({
                   {/* Top-Left Sage Green Category Pill */}
                   {item.tag && (
                     <div className="absolute top-5 left-5 z-10">
-                      <span className="bg-[#66715F] text-white text-[11px] font-medium tracking-wider uppercase px-3.5 py-1.5 rounded-full inline-block shadow-md">
+                      <span className="bg-[#321422]/90 text-white text-[11px] font-medium tracking-wider uppercase px-3.5 py-1.5 rounded-full inline-block shadow-md">
                         {item.tag}
                       </span>
                     </div>
@@ -240,7 +256,7 @@ export const ServiceCatalog: React.FC<ServiceCatalogProps> = ({
                       onClick={() => onSelectServiceForBooking(item.id)}
                       className="inline-block border border-white/80 hover:border-white hover:bg-white hover:text-[#321422] text-white text-xs font-semibold uppercase tracking-[0.2em] py-3 px-6 transition-all duration-300 cursor-pointer"
                     >
-                      VIEW DETAILS
+                      BOOK THIS SERVICE
                     </button>
                   </div>
                 </div>
@@ -255,3 +271,5 @@ export const ServiceCatalog: React.FC<ServiceCatalogProps> = ({
     </section>
   );
 };
+
+

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SALON_INFO, SERVICES } from '../data/salonData';
+import { SALON_INFO } from '../data/salonData';
 import { 
   PhoneIcon, 
   MapPinIcon, 
@@ -7,23 +7,13 @@ import {
   WhatsAppIcon, 
   InstagramIcon, 
   FacebookIcon,
-  CalendarIcon,
+
   CheckIcon,
   StarIcon,
   XIcon
 } from './Icons';
 
-interface FooterProps {
-  onOpenBooking?: (serviceId?: string) => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    service: SERVICES[0]?.id || 'hair-smoothening',
-    comment: ''
-  });
+export const Footer: React.FC = () => {
   const [subscribed, setSubscribed] = useState(false);
   const [email, setEmail] = useState('');
   const [selectedPhoto, setSelectedPhoto] = useState<{ src: string; title: string; alt: string } | null>(null);
@@ -34,17 +24,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
       setSubscribed(true);
       setTimeout(() => setSubscribed(false), 4000);
       setEmail('');
-    }
-  };
-
-  const handleMakeAppointment = (e: React.FormEvent) => {
-    e.preventDefault();
-    const serviceName = SERVICES.find(s => s.id === formData.service)?.name || formData.service;
-    const message = `Hello Spalon! I would like to book an appointment.%0A%0A👤 Name: ${encodeURIComponent(formData.name || 'Guest')}%0A📞 Phone: ${encodeURIComponent(formData.phone || 'Not provided')}%0AService: ${encodeURIComponent(serviceName)}%0A💬 Notes: ${encodeURIComponent(formData.comment || 'Please confirm available slot.')}`;
-    
-    window.open(`https://wa.me/${SALON_INFO.phoneClean.replace('+', '')}?text=${message}`, '_blank');
-    if (onOpenBooking) {
-      onOpenBooking(formData.service);
     }
   };
 
@@ -112,14 +91,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
           
           {/* Left Columns: Brand, Pages, Contacts & Newsletter */}
-          <div className="lg:col-span-7 flex flex-col justify-between">
+          <div className="lg:col-span-12 flex flex-col justify-between">
             
             {/* Top Row: Brand Logo + Pages Links + Contacts Info */}
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-6 pb-12 border-b border-[#3D1426]">
               
               {/* Brand Logo & Tagline */}
               <div className="sm:col-span-4 flex flex-col items-start">
-                <a href="#" className="select-none group" aria-label="Spalon Home">
+                <a href="/#" className="select-none group" aria-label="Spalon Home">
                   <img
                     src="/images/spalon_logo_retina.png"
                     alt="Spalon"
@@ -141,12 +120,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   PAGES
                 </h4>
                 <ul className="flex flex-col gap-2.5 text-xs text-[#D4BCC7]">
-                  <li><a href="#services" className="hover:text-white transition-colors">Our Services</a></li>
-                  <li><a href="#portfolio" className="hover:text-white transition-colors">Bridal Studio</a></li>
-                  <li><a href="#kids" className="hover:text-white transition-colors">Kids Zone</a></li>
-                  <li><a href="#reviews" className="hover:text-white transition-colors">Client Reviews</a></li>
-                  <li><a href="#location" className="hover:text-white transition-colors">Location &amp; Map</a></li>
-                  <li><a href="#faq" className="hover:text-white transition-colors">Salon FAQ</a></li>
+                  <li><a href="/#services" className="hover:text-white transition-colors">Our Services</a></li>
+                  <li><a href="/#portfolio" className="hover:text-white transition-colors">Bridal Studio</a></li>
+                  <li><a href="/#kids" className="hover:text-white transition-colors">Kids Zone</a></li>
+                  <li><a href="/#reviews" className="hover:text-white transition-colors">Client Reviews</a></li>
+                  <li><a href="/contact#location" className="hover:text-white transition-colors">Location &amp; Map</a></li>
+                  <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li><li><a href="/#faq" className="hover:text-white transition-colors">Salon FAQ</a></li>
                 </ul>
               </div>
 
@@ -254,99 +233,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
           </div>
 
-          {/* Right Column: "Book an appointment" Accent Block (La Diva Signature Style) */}
-          <div className="lg:col-span-5 bg-[#3B1529] border border-[#5E2242] rounded-[32px] p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
-            {/* Ambient inner velvet glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#881337]/30 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="relative z-10">
-              <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#E6C280] block mb-2">
-                ✦ RESERVATIONS
-              </span>
-              <h3 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-normal text-white leading-[1.1] tracking-tight mb-6">
-                Book an<br />appointment
-              </h3>
-
-              <form onSubmit={handleMakeAppointment} className="flex flex-col gap-4">
-                {/* Name & Phone side by side */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                  <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-[#D4BCC7] mb-1 font-medium">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Jane Doe"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-[#270D1B] border border-[#5E2242] focus:border-[#E6C280] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-[#8E7281] focus:outline-none transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-[#D4BCC7] mb-1 font-medium">
-                      Your Phone
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="+91 98765 43210"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-[#270D1B] border border-[#5E2242] focus:border-[#E6C280] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-[#8E7281] focus:outline-none transition-colors"
-                    />
-                  </div>
-                </div>
-
-                {/* Service Selection */}
-                <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-[#D4BCC7] mb-1 font-medium">
-                    Choose a Service
-                  </label>
-                  <select
-                    value={formData.service}
-                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full bg-[#270D1B] border border-[#5E2242] focus:border-[#E6C280] rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none transition-colors cursor-pointer"
-                  >
-                    {SERVICES.map((s) => (
-                      <option key={s.id} value={s.id} className="bg-[#240E1B] text-white">
-                        {s.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Comment / Preferred Time */}
-                <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-[#D4BCC7] mb-1 font-medium">
-                    Your Comment / Preferred Date
-                  </label>
-                  <textarea
-                    rows={3}
-                    placeholder="Preferred time or specific requests..."
-                    value={formData.comment}
-                    onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
-                    className="w-full bg-[#270D1B] border border-[#5E2242] focus:border-[#E6C280] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-[#8E7281] focus:outline-none transition-colors resize-none"
-                  />
-                </div>
-
-                {/* Make Appointment Button */}
-                <button
-                  type="submit"
-                  className="w-full mt-2 bg-white hover:bg-[#FDF4F7] text-[#240E1B] font-bold text-xs uppercase tracking-[0.2em] py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 group hover:scale-[1.02]"
-                >
-                  <CalendarIcon className="w-4 h-4 text-[#881337]" />
-                  <span>MAKE AN APPOINTMENT</span>
-                </button>
-
-                <p className="text-[10px] text-center text-[#D4BCC7]/80 mt-1">
-                  ⚡ Prompt confirmation via WhatsApp &amp; Phone call.
-                </p>
-              </form>
-            </div>
-          </div>
-
         </div>
       </div>
 
@@ -394,3 +280,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
     </footer>
   );
 };
+
+
+
