@@ -255,7 +255,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
           </div>
 
           {/* Right Column: "Book an appointment" Accent Block (La Diva Signature Style) */}
-          <div className="lg:col-span-5 bg-[#3B1529] border border-[#5E2242] rounded-[32px] p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
+          <div className="lg:col-span-5 bg-[#3B1529] border border-[#5E2242] rounded-[24px] sm:rounded-[32px] p-5 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
             {/* Ambient inner velvet glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#881337]/30 rounded-full blur-3xl pointer-events-none" />
 
@@ -280,7 +280,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                       placeholder="Jane Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-[#270D1B] border border-[#5E2242] focus:border-[#E6C280] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-[#8E7281] focus:outline-none transition-colors"
+                      className="w-full bg-[#270D1B] border border-[#5E2242] focus:border-[#E6C280] rounded-xl px-4 py-3 sm:py-2.5 text-base sm:text-xs text-white placeholder-[#8E7281] focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -294,7 +294,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                       placeholder="+91 98765 43210"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-[#270D1B] border border-[#5E2242] focus:border-[#E6C280] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-[#8E7281] focus:outline-none transition-colors"
+                      className="w-full bg-[#270D1B] border border-[#5E2242] focus:border-[#E6C280] rounded-xl px-4 py-3 sm:py-2.5 text-base sm:text-xs text-white placeholder-[#8E7281] focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -307,7 +307,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   <select
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full bg-[#270D1B] border border-[#5E2242] focus:border-[#E6C280] rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none transition-colors cursor-pointer"
+                    className="w-full bg-[#270D1B] border border-[#5E2242] focus:border-[#E6C280] rounded-xl px-4 py-3 sm:py-2.5 text-base sm:text-xs text-white focus:outline-none transition-colors cursor-pointer"
                   >
                     {SERVICES.map((s) => (
                       <option key={s.id} value={s.id} className="bg-[#240E1B] text-white">
@@ -327,7 +327,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                     placeholder="Preferred time or specific requests..."
                     value={formData.comment}
                     onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
-                    className="w-full bg-[#270D1B] border border-[#5E2242] focus:border-[#E6C280] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-[#8E7281] focus:outline-none transition-colors resize-none"
+                    className="w-full bg-[#270D1B] border border-[#5E2242] focus:border-[#E6C280] rounded-xl px-4 py-3 sm:py-2.5 text-base sm:text-xs text-white placeholder-[#8E7281] focus:outline-none transition-colors resize-none"
                   />
                 </div>
 

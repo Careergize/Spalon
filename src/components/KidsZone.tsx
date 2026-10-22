@@ -73,10 +73,10 @@ export const KidsZone: React.FC<KidsZoneProps> = ({ onOpenBooking }) => {
             </div>
 
             {/* CTAs */}
-            <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-3.5 w-full sm:w-auto">
+            <div className="mt-6 sm:mt-8 flex flex-col xs:flex-row flex-wrap items-stretch sm:items-center gap-3 w-full sm:w-auto">
               <button
                 onClick={() => onOpenBooking('advance-hair-cut')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs uppercase tracking-wider font-bold text-white bg-gradient-to-r from-[#881337] to-[#BE185D] hover:from-[#9F1239] hover:to-[#E11D48] shadow-md transition-all cursor-pointer"
+                className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs uppercase tracking-wider font-bold text-white bg-gradient-to-r from-[#881337] to-[#BE185D] hover:from-[#9F1239] hover:to-[#E11D48] shadow-md transition-all cursor-pointer active:scale-95"
               >
                 <CalendarIcon className="w-4 h-4 text-[#F3E5AB]" />
                 <span>Book Kids Haircut</span>
@@ -84,7 +84,7 @@ export const KidsZone: React.FC<KidsZoneProps> = ({ onOpenBooking }) => {
 
               <button
                 onClick={() => onOpenBooking('ear-piercing')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold text-[#E6C280] bg-[#321422] hover:bg-[#3D192B] border border-[#5A243D] transition-all cursor-pointer"
+                className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold text-[#E6C280] bg-[#321422] hover:bg-[#3D192B] border border-[#5A243D] transition-all cursor-pointer active:scale-95"
               >
                 <span>Medical Ear Piercing</span>
               </button>
@@ -93,8 +93,8 @@ export const KidsZone: React.FC<KidsZoneProps> = ({ onOpenBooking }) => {
           </div>
 
           {/* Right Image Composition */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-t-full rounded-b-[40px] overflow-hidden border-4 border-[#5A243D]/50 shadow-2xl shadow-black/80 aspect-[3/4] group bg-[#321422]">
+          <div className="lg:col-span-5 relative mt-6 lg:mt-0">
+            <div className="relative rounded-t-full rounded-b-[40px] overflow-hidden border-2 sm:border-4 border-[#5A243D]/50 shadow-2xl shadow-black/80 aspect-[4/5] sm:aspect-[3/4] max-w-xs sm:max-w-md mx-auto group bg-[#321422]">
               <img
                 src="/images/kids_cut.jpg"
                 alt="Happy toddler getting haircut at Spalon Trivandrum"
@@ -103,26 +103,26 @@ export const KidsZone: React.FC<KidsZoneProps> = ({ onOpenBooking }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#240E1B]/80 via-transparent to-transparent" />
               
-              <div className="absolute bottom-6 left-6 right-6 text-white text-center">
+              <div className="absolute bottom-5 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 text-white text-center">
                 <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#240E1B] bg-[#E6C280] px-3 py-1 rounded-full shadow-sm">
                   Spalon Little Ones
                 </span>
-                <p className="font-serif text-xl font-normal mt-2 text-white">Zero Tears. All Smiles.</p>
-                <p className="text-xs text-[#E6C280] font-light">Gentle styling for toddlers &amp; juniors</p>
+                <p className="font-serif text-lg sm:text-xl font-normal mt-1.5 sm:mt-2 text-white">Zero Tears. All Smiles.</p>
+                <p className="text-[11px] sm:text-xs text-[#E6C280] font-light">Gentle styling for toddlers &amp; juniors</p>
               </div>
             </div>
 
-            {/* Testimonial pill */}
-            <div className="absolute -bottom-6 -left-6 bg-[#321422] p-4 rounded-3xl shadow-2xl border border-[#5A243D] max-w-xs hidden sm:block">
-              <div className="flex items-center gap-1.5 text-[#E6C280] mb-1">
-                <SmileIcon className="w-4 h-4" />
-                <span className="text-[10px] uppercase tracking-wider font-bold text-[#E6C280]">Loved by Parents</span>
+            {/* Testimonial pill (Visible on Mobile & Desktop) */}
+            <div className="absolute -bottom-3 left-2 sm:-bottom-6 sm:-left-6 bg-[#321422]/95 backdrop-blur-md p-3 sm:p-4 rounded-2xl sm:rounded-3xl shadow-2xl border border-[#5A243D] max-w-[200px] sm:max-w-xs block z-10">
+              <div className="flex items-center gap-1.5 text-[#E6C280] mb-0.5 sm:mb-1">
+                <SmileIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E6C280]" />
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-wider font-bold text-[#E6C280]">Loved by Parents</span>
               </div>
-              <p className="text-xs text-white italic leading-snug font-light">
+              <p className="text-[10px] sm:text-xs text-white italic leading-snug font-light">
                 &ldquo;My daughter giggled through her haircut. The staff are amazingly patient!&rdquo;
               </p>
-              <p className="text-[10px] text-[#A88E9B] mt-1 font-semibold">
-                — Verified Kumarapuram Parent
+              <p className="text-[9px] sm:text-[10px] text-[#A88E9B] mt-0.5 sm:mt-1 font-semibold">
+                — Verified Parent
               </p>
             </div>
 

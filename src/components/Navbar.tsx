@@ -143,16 +143,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             {/* High-Contrast Luxury "Book Appointment" CTA Button */}
             <button
               onClick={() => onOpenBooking()}
-              className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#881337] via-[#9F1239] to-[#BE185D] hover:from-[#9F1239] hover:to-[#E11D48] border border-[#BE185D]/60 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#881337] via-[#9F1239] to-[#BE185D] hover:from-[#9F1239] hover:to-[#E11D48] border border-[#BE185D]/60 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer active:scale-95"
             >
               <CalendarIcon className="w-3.5 h-3.5 text-[#F3E5AB]" />
-              <span>Book Appointment</span>
+              <span className="xs:hidden">Book</span>
+              <span className="hidden xs:inline">Book Slot</span>
+              <span className="hidden md:inline">&nbsp;Appointment</span>
             </button>
 
             {/* Mobile Search Icon */}
             <button
               onClick={() => setSearchOpen(true)}
-              className="lg:hidden p-2 text-[#E0CCD5] hover:text-white rounded-lg transition-colors cursor-pointer"
+              className="lg:hidden p-2 text-[#E0CCD5] hover:text-white rounded-lg transition-colors cursor-pointer min-w-[40px] min-h-[40px] flex items-center justify-center active:scale-90"
               aria-label="Search treatments"
             >
               <SearchIcon className="w-4 h-4" />
@@ -161,7 +163,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             {/* Mobile Menu Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#E0CCD5] hover:text-[#E6C280] hover:bg-[#321422] rounded-lg transition-colors cursor-pointer"
+              className="lg:hidden p-2 text-[#E0CCD5] hover:text-[#E6C280] hover:bg-[#321422] rounded-lg transition-colors cursor-pointer min-w-[40px] min-h-[40px] flex items-center justify-center active:scale-90"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >

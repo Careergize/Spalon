@@ -119,7 +119,7 @@ export const ServiceCatalog: React.FC<ServiceCatalogProps> = ({
             </p>
 
             {/* Mobile Carousel Controls & Swipe Hint (Mobile / Tablet) */}
-            <div className="flex lg:hidden items-center gap-3 mt-6">
+            <div className="hidden sm:flex lg:hidden items-center gap-3 mt-6">
               <button
                 onClick={() => scroll('left')}
                 className="w-10 h-10 rounded-full bg-[#C08A99] hover:bg-[#A8707F] text-white flex items-center justify-center shadow-lg transition-all active:scale-90 cursor-pointer"
@@ -145,8 +145,8 @@ export const ServiceCatalog: React.FC<ServiceCatalogProps> = ({
               </span>
             </div>
 
-            {/* Quick WhatsApp Inquiry Link */}
-            <div className="mt-6 sm:mt-8 pt-6 border-t border-[#5A243D] flex items-center gap-4">
+            {/* Quick WhatsApp Inquiry Link (Desktop/Tablet) */}
+            <div className="hidden sm:flex mt-6 sm:mt-8 pt-6 border-t border-[#5A243D] items-center gap-4">
               <a
                 href={`https://wa.me/${SALON_INFO.phoneClean.replace('+', '')}?text=Hi%20Spalon%2C%20I%20would%20like%20to%20view%20your%20full%20services%20menu.`}
                 target="_blank"
@@ -199,13 +199,13 @@ export const ServiceCatalog: React.FC<ServiceCatalogProps> = ({
             {/* Horizontal Scroll Track */}
             <div
               ref={carouselRef}
-              className="flex items-center gap-4 sm:gap-6 overflow-x-auto scrollbar-none py-4 px-1 sm:px-2 snap-x snap-mandatory touch-pan-x"
+              className="flex items-center gap-4 sm:gap-6 overflow-x-auto scrollbar-none py-3 sm:py-4 px-1 sm:px-2 snap-x snap-mandatory touch-pan-x"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
             >
               {services.map((item) => (
                 <div
                   key={item.id}
-                  className="w-[270px] xs:w-[300px] sm:w-[330px] md:w-[360px] h-[460px] sm:h-[540px] shrink-0 relative overflow-hidden group select-none snap-start bg-[#1B0A13] shadow-2xl border border-[#4A1A30]"
+                  className="w-[82vw] xs:w-[300px] sm:w-[330px] md:w-[360px] h-[430px] sm:h-[540px] shrink-0 relative overflow-hidden rounded-3xl group select-none snap-center sm:snap-start bg-[#1B0A13] shadow-2xl border border-[#5A243D]/80 hover:border-[#E6C280]/60 transition-colors"
                 >
                   {/* Photo Background */}
                   <img
@@ -216,29 +216,29 @@ export const ServiceCatalog: React.FC<ServiceCatalogProps> = ({
                   />
 
                   {/* Gradient Overlay for Text Legibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1B0A13]/95 via-[#1B0A13]/30 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1B0A13]/95 via-[#1B0A13]/35 to-transparent pointer-events-none" />
 
                   {/* Top-Left Sage Green Category Pill */}
                   {item.tag && (
-                    <div className="absolute top-5 left-5 z-10">
-                      <span className="bg-[#66715F] text-white text-[11px] font-medium tracking-wider uppercase px-3.5 py-1.5 rounded-full inline-block shadow-md">
+                    <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-10">
+                      <span className="bg-[#66715F] text-white text-[10px] sm:text-[11px] font-medium tracking-wider uppercase px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full inline-block shadow-md backdrop-blur-sm">
                         {item.tag}
                       </span>
                     </div>
                   )}
 
                   {/* Bottom Content & View Details Button */}
-                  <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col items-start">
-                    <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal mb-2 leading-tight">
+                  <div className="absolute bottom-5 sm:bottom-6 left-5 sm:left-6 right-5 sm:right-6 z-10 flex flex-col items-start">
+                    <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-white font-normal mb-1.5 sm:mb-2 leading-tight">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-stone-200/90 font-light leading-relaxed mb-5 line-clamp-2">
+                    <p className="text-xs sm:text-sm text-stone-200/90 font-light leading-relaxed mb-4 sm:mb-5 line-clamp-2">
                       {item.description}
                     </p>
 
                     <button
                       onClick={() => onSelectServiceForBooking(item.id)}
-                      className="inline-block border border-white/80 hover:border-white hover:bg-white hover:text-[#321422] text-white text-xs font-semibold uppercase tracking-[0.2em] py-3 px-6 transition-all duration-300 cursor-pointer"
+                      className="inline-block border border-white/80 hover:border-[#E6C280] hover:bg-[#E6C280] hover:text-[#240E1B] text-white text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] py-2.5 px-5 sm:py-3 sm:px-6 rounded-full transition-all duration-300 cursor-pointer active:scale-95"
                     >
                       VIEW DETAILS
                     </button>
@@ -247,6 +247,42 @@ export const ServiceCatalog: React.FC<ServiceCatalogProps> = ({
               ))}
             </div>
 
+            {/* Mobile Bottom Navigation & Controls Bar */}
+            <div className="flex sm:hidden items-center justify-between mt-4 px-2">
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => scroll('left')}
+                  className="w-9 h-9 rounded-full bg-[#321422] border border-[#5A243D] text-[#E6C280] flex items-center justify-center active:scale-90 cursor-pointer"
+                  aria-label="Previous service"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => scroll('right')}
+                  className="w-9 h-9 rounded-full bg-[#321422] border border-[#5A243D] text-[#E6C280] flex items-center justify-center active:scale-90 cursor-pointer"
+                  aria-label="Next service"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+                <span className="text-[10px] text-[#D4BCC7] uppercase tracking-wider pl-1">
+                  Swipe left / right
+                </span>
+              </div>
+
+              <a
+                href={`https://wa.me/${SALON_INFO.phoneClean.replace('+', '')}?text=Hi%20Spalon%2C%20I%20would%20like%20to%20view%20your%20full%20services%20menu.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] font-semibold text-[#E6C280] flex items-center gap-1 uppercase tracking-wider"
+              >
+                <span>Full Menu</span>
+                <span>→</span>
+              </a>
+            </div>
           </div>
 
         </div>

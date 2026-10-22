@@ -23,7 +23,7 @@ export const ReviewsSection: React.FC = () => {
           </p>
 
           {/* Aggregate Rating Pill */}
-          <div className="mt-6 sm:mt-8 inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 p-3.5 sm:p-4 rounded-3xl bg-[#321422] border border-[#5A243D] shadow-md max-w-full">
+          <div className="mt-6 sm:mt-8 inline-flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 p-4 sm:p-4 rounded-3xl bg-[#321422] border border-[#5A243D] shadow-md max-w-full">
             <div className="flex items-center gap-3">
               <span className="font-serif text-2xl sm:text-3xl font-bold text-white">4.4</span>
               <div className="flex flex-col text-left">
@@ -36,33 +36,35 @@ export const ReviewsSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="h-6 w-px bg-[#5A243D] hidden sm:block" />
+            <div className="h-4 sm:h-6 w-full sm:w-px bg-[#5A243D]/60 sm:bg-[#5A243D] my-1 sm:my-0" />
 
-            <div className="flex items-center gap-2 text-[#E0CCD5] text-xs font-semibold uppercase tracking-wider">
-              <ShieldCheckIcon className="w-4 h-4 text-[#E6C280]" />
-              <span>Certified Stylists</span>
+            <div className="flex items-center gap-4 sm:gap-6">
+              <div className="flex items-center gap-1.5 text-[#E0CCD5] text-xs font-semibold uppercase tracking-wider">
+                <ShieldCheckIcon className="w-4 h-4 text-[#E6C280]" />
+                <span>Certified Stylists</span>
+              </div>
+
+              <div className="h-3 w-px bg-[#5A243D] sm:hidden" />
+
+              <a
+                href={SALON_INFO.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs uppercase tracking-wider font-bold text-[#E6C280] hover:text-white flex items-center gap-1.5 transition-colors"
+              >
+                <span>Google Maps</span>
+                <span>&rarr;</span>
+              </a>
             </div>
-
-            <div className="h-6 w-px bg-[#5A243D] hidden sm:block" />
-
-            <a
-              href={SALON_INFO.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs uppercase tracking-wider font-bold text-[#E6C280] hover:text-white flex items-center gap-1.5 transition-colors"
-            >
-              <span>View on Google Maps</span>
-              <span>&rarr;</span>
-            </a>
           </div>
         </div>
 
         {/* Reviews Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
           {REVIEWS.map((rev) => (
             <div
               key={rev.id}
-              className="p-6 sm:p-8 rounded-[28px] sm:rounded-[36px] bg-[#321422] border border-[#5A243D] shadow-lg hover:border-[#E6C280] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 relative"
+              className="p-5 sm:p-8 rounded-[24px] sm:rounded-[36px] bg-[#321422] border border-[#5A243D] shadow-lg hover:border-[#E6C280] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 relative"
             >
               <div>
                 {/* Quotation mark & Rating */}

@@ -38,7 +38,7 @@ export const Philosophy: React.FC = () => {
           
           {/* Left Column: Arched Model Portrait */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-t-full rounded-b-[40px] overflow-hidden border-4 border-[#5A243D]/50 shadow-2xl shadow-[#1B0A13] aspect-[3/4] bg-[#321422]">
+            <div className="relative rounded-t-full rounded-b-[40px] overflow-hidden border-2 sm:border-4 border-[#5A243D]/50 shadow-2xl shadow-[#1B0A13] aspect-[4/5] sm:aspect-[3/4] max-w-xs sm:max-w-md mx-auto bg-[#321422]">
               <img
                 src="/images/ladiva_portrait.jpg"
                 alt="Spalon Beauty Philosophy & Craftsmanship"
@@ -47,20 +47,20 @@ export const Philosophy: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#240E1B]/70 via-transparent to-transparent" />
               
-              <div className="absolute bottom-6 left-6 right-6 text-center text-white">
+              <div className="absolute bottom-5 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 text-center text-white">
                 <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#F3E5AB] bg-[#321422]/90 px-3 py-1 rounded-full backdrop-blur-sm border border-[#5A243D]">
                   Master Artistry
                 </span>
-                <p className="font-serif text-lg mt-2">Bespoke Elegance</p>
+                <p className="font-serif text-base sm:text-lg mt-1 sm:mt-2">Bespoke Elegance</p>
               </div>
             </div>
 
-            {/* Corner Decorative Accent Pill */}
-            <div className="absolute -bottom-6 -right-6 bg-[#321422] p-5 rounded-3xl border border-[#5A243D] shadow-xl max-w-[200px] hidden sm:block">
-              <span className="font-serif text-3xl font-bold text-[#E6C280] block">
+            {/* Corner Decorative Accent Pill (Visible on Mobile & Desktop) */}
+            <div className="absolute -bottom-3 right-2 sm:-bottom-6 sm:-right-6 bg-[#321422]/95 backdrop-blur-md p-3 sm:p-5 rounded-2xl sm:rounded-3xl border border-[#5A243D] shadow-xl max-w-[160px] sm:max-w-[200px] block z-10">
+              <span className="font-serif text-2xl sm:text-3xl font-bold text-[#E6C280] block">
                 8.5k+
               </span>
-              <p className="text-xs text-[#D4BCC7] mt-1 font-medium leading-snug">
+              <p className="text-[10px] sm:text-xs text-[#D4BCC7] mt-0.5 sm:mt-1 font-medium leading-snug">
                 Happy ladies and kids pampered in Trivandrum.
               </p>
             </div>
