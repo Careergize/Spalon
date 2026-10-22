@@ -129,7 +129,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                   </defs>
                   <text fontSize="6.3" fontWeight="bold" fill="#E6C280">
                     <textPath href="#circlePath" xlinkHref="#circlePath" textLength="225" lengthAdjust="spacing">
-                      ✦ SPALON BEAUTY PARLOUR ✦ TRIVANDRUM
+                      ✦ SPALON BEAUTY SALON ✦ TRIVANDRUM
                     </textPath>
                   </text>
                 </svg>
