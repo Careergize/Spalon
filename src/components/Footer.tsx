@@ -40,7 +40,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
   const handleMakeAppointment = (e: React.FormEvent) => {
     e.preventDefault();
     const serviceName = SERVICES.find(s => s.id === formData.service)?.name || formData.service;
-    const message = `Hello Spalon! I would like to book an appointment.%0A%0A👤 Name: ${encodeURIComponent(formData.name || 'Guest')}%0A📞 Phone: ${encodeURIComponent(formData.phone || 'Not provided')}%0A✨ Service: ${encodeURIComponent(serviceName)}%0A💬 Notes: ${encodeURIComponent(formData.comment || 'Please confirm available slot.')}`;
+    const message = `Hello Spalon! I would like to book an appointment.%0A%0A👤 Name: ${encodeURIComponent(formData.name || 'Guest')}%0A📞 Phone: ${encodeURIComponent(formData.phone || 'Not provided')}%0AService: ${encodeURIComponent(serviceName)}%0A💬 Notes: ${encodeURIComponent(formData.comment || 'Please confirm available slot.')}`;
     
     window.open(`https://wa.me/${SALON_INFO.phoneClean.replace('+', '')}?text=${message}`, '_blank');
     if (onOpenBooking) {

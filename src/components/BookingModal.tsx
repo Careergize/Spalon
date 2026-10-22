@@ -5,7 +5,6 @@ import {
   WhatsAppIcon, 
   PhoneIcon, 
   CheckIcon, 
-  SparklesIcon, 
   MapPinIcon 
 } from './Icons';
 
@@ -50,7 +49,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const text = `✨ *Appointment Reservation - Spalon Kumarapuram* ✨\n\n` +
+    const text = `*Appointment Reservation - Spalon Kumarapuram*\n\n` +
       `👤 *Guest Name:* ${clientName || 'Valued Guest'}\n` +
       `📞 *Mobile:* ${clientPhone || 'Not provided'}\n` +
       `🏷️ *Treatment:* ${currentService.name}\n` +
@@ -88,7 +87,6 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           </button>
 
           <div className="flex items-center gap-2 text-[#E6C280] text-xs font-semibold uppercase tracking-[0.25em] mb-1.5">
-            <SparklesIcon className="w-4 h-4" />
             <span>Spalon • Private Reservation</span>
           </div>
 

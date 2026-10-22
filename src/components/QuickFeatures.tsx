@@ -1,10 +1,10 @@
 import React from 'react';
-import { SparklesIcon, HeartIcon, ShieldCheckIcon, AwardIcon } from './Icons';
+import { UserIcon, HeartIcon, ShieldCheckIcon, AwardIcon } from './Icons';
 
 export const QuickFeatures: React.FC = () => {
   const features = [
     {
-      icon: <SparklesIcon className="w-6 h-6 text-rose-700" />,
+      icon: <UserIcon className="w-6 h-6 text-rose-700" />,
       title: "Ladies Sanctuary",
       description: "A private, serene parlour designed for your ultimate comfort, relaxation, and bespoke pampering.",
       badge: "Exclusive & Safe",

@@ -1,6 +1,5 @@
 import React from 'react';
 import { 
-  SparklesIcon, 
   CalendarIcon, 
   SmileIcon,
   CheckIcon 
@@ -87,7 +86,6 @@ export const KidsZone: React.FC<KidsZoneProps> = ({ onOpenBooking }) => {
                 onClick={() => onOpenBooking('kids-ear-piercing')}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold text-[#E6C280] bg-[#321422] hover:bg-[#3D192B] border border-[#5A243D] transition-all cursor-pointer"
               >
-                <SparklesIcon className="w-4 h-4 text-[#E6C280]" />
                 <span>Medical Ear Piercing</span>
               </button>
             </div>

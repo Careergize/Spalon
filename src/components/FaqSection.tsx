@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FAQS } from '../data/salonData';
-import { ChevronDownIcon, SparklesIcon } from './Icons';
+import { ChevronDownIcon } from './Icons';
 
 export const FaqSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -16,7 +16,6 @@ export const FaqSection: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#321422] border border-[#5A243D] text-[#E6C280] text-xs font-semibold uppercase tracking-[0.2em] mb-4 shadow-sm">
-            <SparklesIcon className="w-3.5 h-3.5 text-[#E6C280]" />
             Questions & Answers
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-tight">

@@ -1,5 +1,4 @@
-import React from 'react';
-import { SparklesIcon } from './Icons';
+import { ShieldCheckIcon } from './Icons';
 
 export const Philosophy: React.FC = () => {
   const pillars = [
@@ -95,7 +94,7 @@ export const Philosophy: React.FC = () => {
             {/* Bottom Hygiene & Product Pledge */}
             <div className="p-5 rounded-2xl bg-[#1F0B17] border border-[#4A1A30] flex items-center gap-4 text-xs text-[#D4BCC7]">
               <div className="w-8 h-8 rounded-full bg-[#881337] text-[#E6C280] flex items-center justify-center shrink-0 border border-[#E6C280]/30">
-                <SparklesIcon className="w-4 h-4" />
+                <ShieldCheckIcon className="w-4 h-4" />
               </div>
               <p className="leading-relaxed">
                 <strong className="text-white">Certified Brands Only:</strong> We strictly use authentic L&apos;Oréal Professionnel, O3+, Cheryl&apos;s Cosmeceuticals, and hypoallergenic kid-safe formulations.
