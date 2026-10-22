@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   CalendarIcon, 
-  SmileIcon,
+
   CheckIcon 
 } from './Icons';
 
@@ -112,19 +112,6 @@ export const KidsZone: React.FC<KidsZoneProps> = ({ onOpenBooking }) => {
               </div>
             </div>
 
-            {/* Testimonial pill (Visible on Mobile & Desktop) */}
-            <div className="absolute -bottom-3 left-2 sm:-bottom-6 sm:-left-6 bg-[#321422]/95 backdrop-blur-md p-3 sm:p-4 rounded-2xl sm:rounded-3xl shadow-2xl border border-[#5A243D] max-w-[200px] sm:max-w-xs block z-10">
-              <div className="flex items-center gap-1.5 text-[#E6C280] mb-0.5 sm:mb-1">
-                <SmileIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E6C280]" />
-                <span className="text-[9px] sm:text-[10px] uppercase tracking-wider font-bold text-[#E6C280]">Loved by Parents</span>
-              </div>
-              <p className="text-[10px] sm:text-xs text-white italic leading-snug font-light">
-                &ldquo;My daughter giggled through her haircut. The staff are amazingly patient!&rdquo;
-              </p>
-              <p className="text-[9px] sm:text-[10px] text-[#A88E9B] mt-0.5 sm:mt-1 font-semibold">
-                — Verified Parent
-              </p>
-            </div>
 
           </div>
 
@@ -134,3 +121,4 @@ export const KidsZone: React.FC<KidsZoneProps> = ({ onOpenBooking }) => {
     </section>
   );
 };
+

@@ -3,8 +3,7 @@ import {
   CalendarIcon, 
   WhatsAppIcon, 
   CheckIcon, 
-  StarIcon,
-  HeartIcon
+  StarIcon
 } from './Icons';
 import { SALON_INFO } from '../data/salonData';
 
@@ -74,16 +73,6 @@ export const BridalStudio: React.FC<BridalStudioProps> = ({ onOpenBooking }) => 
               </div>
             </div>
 
-            {/* Floating Humidity Proof Tag (Visible on Mobile & Desktop) */}
-            <div className="absolute -bottom-3 left-2 sm:-bottom-6 sm:-left-6 bg-[#321422]/95 backdrop-blur-md border border-[#5A243D] p-3 sm:p-4 rounded-2xl shadow-2xl max-w-[160px] sm:max-w-[200px] block z-10">
-              <div className="flex items-center gap-1.5 sm:gap-2 text-[#E6C280] mb-0.5 sm:mb-1">
-                <HeartIcon className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#E6C280]" />
-                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">16-Hour Hold</span>
-              </div>
-              <p className="text-[10px] sm:text-[11px] text-[#D4BCC7] leading-snug font-light">
-                Proof against coastal humidity and heavy stage lights.
-              </p>
-            </div>
           </div>
 
           {/* Right Column: Highlights & Packages */}
